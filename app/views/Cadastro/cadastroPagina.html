@@ -1,4 +1,4 @@
-#{extends 'main.html' /}
+
 <!DOCTYPE html>
 <html>
 
@@ -92,49 +92,45 @@
             <div class="heading_container">
                
               <h2>
-                Cadastro de Publicações 
+                Cadastro de Usuario 
               </h2>
             </div>
             <p>
                 <br/>
-                <form action="@{Postagens.salvar}">
+                <form action="@{Cadastro.salvar}">
                    
                    
                     
                     <div class="form-outline mb-4">
                         <input type="text" id="form3Example3" class="form-control form-control-lg"
-                          placeholder="Titulo da Publicação" name="p.titulo"/>
+                          placeholder="Nome" name="operador.nome"/>
                         
                       </div>
                       <div class="form-outline mb-4">
-                        <input type="text" id="form3Example3" class="form-control form-control-lg"
-                          placeholder="Descrição breve" name="p.descricao"/>
+                        <input type="email" id="form3Example3" class="form-control form-control-lg"
+                          placeholder="Email" name="operador.email"/>
                         
                       </div>
                       <div class="form-outline mb-4">
-                        <input type="text" id="form3Example3" class="form-control form-control-lg"
-                          placeholder="Nome do autor" name="p.autor"/>
+                        <input type="password" id="form3Example3" class="form-control form-control-lg"
+                          placeholder="Senha" name="operador.senha"/>
                         
                       </div>
                       
-                      <div class="form-outline mb-4">
-                        <input type="text" id="form3Example3" class="form-control form-control-lg"
-                          placeholder="Ano da publicação" name="p.ano"/>
-                      </div>
+                      
           
-                      <img src="" id="imgVideo" >
-					<br/>
-					<input class="inputFoto" type="file"  name="foto" id="imagem" onchange="previewImagem()" >
-					<br/>
+                    
 					
     
           
                     <div class="text-center text-lg-start mt-4 pt-2">
                       <button type="submit" class="btn btn-primary btn-lg"
-                        style="padding-left: 2.5rem; padding-right: 2.5rem;">Cadastrar Publicação</button>
-                        <br/>
-                        <br/>
-                        <br/>
+                        style="padding-left: 2.5rem; padding-right: 2.5rem;">Cadastre-se</button>
+                      <br/>   <br/>
+
+                      
+                         <a href="@{TelaInicial.index}">Voltar</a>
+                        
                     </div>
           
                   </form>

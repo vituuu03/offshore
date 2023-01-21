@@ -13,7 +13,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/favicon.png" type="">
 
-  <title> Feane </title>
+  <title>OffShore</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="@{'public/stylesheets/css/bootstrap.css'}" />
@@ -30,11 +30,23 @@
   <!-- responsive style -->
   <link href="@{'public/stylesheets/css/responsive.css'}" rel="stylesheet" />
 
+
+<style>
+
+#divPesquisar{
+  margin-left: auto;
+  m
+
+}
+
+</style>
+
+
 </head>
 
 <body>
 
-  <div class="hero_area">
+ <div class="hero_area">
     <div class="bg-box">
       <img src="@{'public/images/images/Offset Noticias.jpg'}" alt="">
     </div>
@@ -69,13 +81,11 @@
               </li>
             </ul>
             <div class="user_option">
-              <form class="form-inline">
-                <input type="search" class="form-control rounded" placeholder="Pesquisar" aria-label="Search" aria-describedby="search-addon" />
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-              </form>
+              
               <br/>
+              <a href="@{cadastro.cadastropagina}" class="order_online">
+                Cadastre-se
+              </a>
               <a href="@{Logins.form}" class="order_online">
                 Login
               </a>
@@ -135,42 +145,75 @@
 
   <!-- food section -->
 
-  <section class="food_section layout_padding-bottom">
-    <div class="container">
-     
+  <form class="form-inline">
+    <div id="divPesquisar">
+    <input type="search" class="form-control rounded" placeholder="Pesquisar" aria-label="Search" aria-describedby="search-addon" />
+    <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </button>
+  </div>
+  </form>
 
-      
+  <sec  tion class="food_section layout_padding-bottom">
+    
+    <div class="container">
+    
 
       <div class="filters-content">
-        <div class="row grid">
-          <div class="col-sm-6 col-lg-4 all pizza">
-            <div class="box">
-              <div>
-               
-                <div class="img-box">
-                  <img src="@{'public/images/images/img-about.png'}" alt="inserir local da foto da noticia">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                   item name
-                  </h5>
-                  <p>
-                   item descrição
-                  </p>
-                  
-                  <form class="form-inline">
-                    
-                    <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit" class="order_online" style="background-color: darkgoldenrod; border-radius: 20px;">
-                    linkagem da news
-                    </button>
-                  </form>
-
-                </div>
+      <div class="row grid">
+        #{list items:postagens, as:'p'}
+        <div class="col-sm-6 col-lg-4 all pizza">
+          <div class="box">
+            <div>
+              <div class="img-box">
+                <img src="@{'public/images/images/about-img.png'}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  ${p.titulo}
+                </h5>
+                <p>
+                  ${p.descricao}
+                </p>
+                 <p>
+                  ${p.autor}
+                </p>
+                <p>
+                  ${p.ano}
+                </p>
+                
+                
+                
+                
+                
+                
+                
+                <form class="form-inline">
+                <a href="#"><button class="btn  my-2 my-sm-0 nav_search-btn" type="submit" class="order_online" style="background-color: darkgoldenrod; border-radius: 20px;">
+                  linkagem da news
+                  </button></a>
+                </form>
               </div>
             </div>
           </div>
         </div>
+        #{/list}
+        
+        
+        
+        
+        
+        
+        
+
       </div>
+    </div>
+
+      
+     
+      
+    
+
       <div class="btn-box">
         <a href="@{SaibaMais.about}">
           Saiba Mais
@@ -179,7 +222,17 @@
     </div>
   </section>
 
-  
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
   <!-- footer section -->
 
   <!-- jQery -->

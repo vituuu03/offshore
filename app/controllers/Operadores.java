@@ -17,4 +17,7 @@ public class Operadores extends Controller {
 		List<Operador> operadores = Operador.findAll();
 		render(operadores);
 	}
+
+	
+
 }

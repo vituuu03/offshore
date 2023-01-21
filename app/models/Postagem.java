@@ -14,11 +14,14 @@ public class Postagem extends Model {
 	public String titulo;
 	
 	@Required
+	public String descricao;
+
+	@Required
 	public String autor;
 	
-	@Required
-	public String conteudo;
 	
 	@Required
-	public Date data = new Date(); 
+	public String ano;
+
+	public String nomeFoto;
 }

@@ -15,7 +15,7 @@ public class Logins extends Controller {
 			if (operador != null) {
 				session.put("operador", operador.id);
 				flash.success("Bem vindo ao sistema");
-				Postagens.formCadastroNews();
+				Postagens.inicial();
 				
 			}else {
 				flash.error("Senha e login não correspondidos ");
@@ -26,7 +26,7 @@ public class Logins extends Controller {
 		public static void logout() {
 			session.clear();
 			flash.success("Você saiu da página do administrador");
-			Postagens.inicial();
+			TelaInicial.index();
 		}
 		public static void cadastro(String a) {
 			render();

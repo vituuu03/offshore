@@ -1,45 +1,121 @@
 #{extends 'main.html' /}
-#{set title:'Postagens' /}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Página Usuário</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="@{'public/stylesheets/css/bootstrap.css'}" />
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- nice select  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+  <!-- font awesome style -->
+  <link href="@{'public/stylesheets/css/font-awesome.min.css'}" rel="stylesheet" />
 
-<form action="@{Postagens.listar}">
-  <div class="row">
-  <div class="col-12">
-  <label class="form-label" style="color: white;">Termo de busca:</label>
-  </div>
-  
-  <div class="col-10">
-  |<input type="text" name="termo" class="form-control">
-  </div>
-  
-  <input type="submit" value="Pesquisa" class="btn btn-primary btn-sm col-2">
-  </div>
-  
-  #{if termo}
-  <small>Pesquisando por: ${termo}</small> #{/if} #{else}
-  <small>Pesquisando por: TODOS</small>#{/else}
-</form> 
-
-
-
-
-<div class="row row-cols-1 row-cols-md-3 g-4">
-#{list items:postagens, as:'p'}
+  <!-- Custom styles for this template -->
+  <link href="@{'public/stylesheets/css/style.css'}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="@{'public/stylesheets/css/responsive.css'}" rel="stylesheet" />
 
 
-  <div class="col">
-    <div class="card h-100">
-      <img src="@{'/public/images/roxo.jfif'}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">${p.titulo}</h5>
-        <p class="card-text">${p.conteudo}</div>
+
+<style>
+
+#navbarOFF {
+  background-color: brown;
+}
+
+#h1Publicações{
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+</style>
+
+</head>
+<body style="background-color: black;">
+
+
+  <h1 id="h1Publicações">Minhas publicações</h1>
+
+  <sec  tion class="food_section layout_padding-bottom">
     
-    <div>
-    <h6 class="card-title"><i class="bi bi-people-fill"></i> ${p.autor}</h6><br/>
-    <a href="@{postagens.remover(p.id)}" class="btn btn-danger">Remover</a>
-    <a href="@{postagens.editar(p.id)}" class="btn btn-primary">Editar</a> </div> </div>
-  </div>
+    <div class="container">
+    
 
-#{/list}
-</div>
+      <div class="filters-content">
+      <div class="row grid">
+        #{list items:postagens, as:'p'}
+        <div class="col-sm-6 col-lg-4 all pizza">
+          <div class="box">
+            <div>
+              <div class="img-box">
+                <img src="@{'public/images/images/about-img.png'}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  ${p.titulo}
+                </h5>
+                <p>
+                  ${p.descricao}
+                </p>
+                 <p>
+                  ${p.autor}
+                </p>
+                <p>
+                  ${p.ano}
+                </p>
+                
+                
+                
+                
+                
+                
+                
+                <form class="form-inline">
+                <a href="#"><button class="btn  my-2 my-sm-0 nav_search-btn" type="submit" class="order_online" style="background-color: darkgoldenrod; border-radius: 20px;">
+                  linkagem da news
+                  </button></a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        #{/list}
+        
+        
+        
+        
+        
+        
+        
+
+      </div>
+    </div>
+
+      
+     
+      
+    
+
+     
+    </div>
+  </section>
+
+</body>
+</html>>
+
+
+
+</html>
