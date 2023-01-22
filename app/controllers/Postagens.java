@@ -9,6 +9,17 @@ import play.mvc.Controller;
 
 public class Postagens extends Controller {
 	
+	public static void remover(Long id) {
+		Postagem p = Postagem.findById(id);
+		p.delete();
+		
+	}
+	public static void editar(Long id) {
+		Postagem edit = Postagem.findById(id);
+		renderTemplate("Postagens/form.html" , edit);
+	}
+
+
 	public static void formCadastroNews() {
 		render();
 	}
@@ -27,53 +38,39 @@ public class Postagens extends Controller {
 		render(postagens, termo);
 	}
 	public static void salvar(Postagem p, File foto) {
-		if (foto != null) {
+		
+			if (foto != null) {
 			p.nomeFoto = foto.getName();
 		}else {
 			p.nomeFoto = p.nomeFoto;
 		}
-		
+
 		p.save();
-		
+
 		if (foto != null && p.id != null) {
-		new File("./fotoPostagens/" + p.id).mkdirs();
+			new File("./offshore/uploads/" + p.id).mkdir();
 		
-		
-		
-		File dest = new File("./fotoPostagens/" + p.id + "/" + foto.getName());
-		
+		File dest = new File("./offshore/uploads/" + p.id + "/" + foto.getName());
+
 		if (dest.exists()) {
 			dest.delete();
-		
 		}
 		foto.renameTo(dest);
 		}
-		formCadastroNews();
+
+		inicial();
 		
 	}
 
-	
-
-
-
-
-
-
-
-
-
-
-
-	
-	public static void remover(Long id) {
-		Postagem p = Postagem.findById(id);
-		p.delete();
-		
-	}
-	public static void editar(Long id) {
-		Postagem edit = Postagem.findById(id);
-		renderTemplate("Postagens/form.html" , edit);
-	}
-	
-	
 }
+
+
+
+
+
+
+
+
+
+
+	
