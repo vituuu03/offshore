@@ -10,10 +10,13 @@ public class Logins extends Controller {
 		render();
 	}
 		public static void logar(String email, String senha, Long id) {
-			Operador operador = Operador.find("email = ?1 and senha = ?2", email, senha).first();
+			Operador usuOperador = Operador.find("email = ?1 and senha = ?2", email, senha).first();
 			
-			if (operador != null) {
-				session.put("operador", operador.id);
+			if (usuOperador != null) {
+				session.put("ope.id", usuOperador.id);
+			session.put("ope.nome", usuOperador.nome);
+			session.put("ope.email", usuOperador.email);
+			
 				flash.success("Bem vindo ao sistema");
 				Postagens.inicial();
 				

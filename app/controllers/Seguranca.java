@@ -9,7 +9,7 @@ public class Seguranca extends Controller{
 	static void verificar() {
 
 		// Se o usuraio não estiver logado, não é possível acessar as páginas
-		if (session.contains("operador.email") == false) {
+		if (session.contains("ope.email") == false) {
 			Logins.form();
 		}
 

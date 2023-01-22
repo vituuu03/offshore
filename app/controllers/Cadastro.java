@@ -9,8 +9,8 @@ public class Cadastro extends Controller {
 
     }
     
-    public static void salvar(Operador operador){
-        operador.save();
+    public static void salvar(Operador ope){
+        ope.save();
         flash.success("Operador cadastrado com sucesso");
         Cadastro.cadastroPagina();
     }
