@@ -5,10 +5,14 @@ import java.util.Collections;
 import java.util.List;
 
 import models.Postagem;
+import models.Postagem;
 import play.mvc.Controller;
+import play.mvc.With;
 
-public class Postagens extends Controller {
-	
+@With(Seguranca.class)
+
+public class Postagens extends Controller{
+
 	public static void remover(Long id) {
 		Postagem p = Postagem.findById(id);
 		p.delete();
@@ -37,40 +41,46 @@ public class Postagens extends Controller {
 		
 		render(postagens, termo);
 	}
-	public static void salvar(Postagem p, File foto) {
+
+
+    public static void formPostagens() {
+        render();
+    }
+
+    public static void excluir(Long id) {
+        Postagem v = Postagem.findById(id);
+        v.delete();
+      
+    }
+    	
+    public static void salvar(Postagem v, File foto) {
 		
-			if (foto != null) {
-			p.nomeFoto = foto.getName();
+		if (foto != null) {
+			v.nomeFoto = foto.getName();
 		}else {
-			p.nomeFoto = p.nomeFoto;
+			v.nomeFoto = v.nomeFoto;
 		}
-
-		p.save();
-
-		if (foto != null && p.id != null) {
-			new File("./offshore/uploads/" + p.id).mkdir();
 		
-		File dest = new File("./offshore/uploads/" + p.id + "/" + foto.getName());
-
+		v.save();
+		
+		if (foto != null && v.id != null) {
+		new File("./offshore/uploads/" + v.id).mkdirs();
+		
+		
+		
+		File dest = new File("./offshore/uploads/" + v.id + "/" + foto.getName());
+		
 		if (dest.exists()) {
 			dest.delete();
+		
 		}
 		foto.renameTo(dest);
 		}
-
-		inicial();
+		Postagens.inicial();
 		
 	}
 
-}
 
+   }
+    
 
-
-
-
-
-
-
-
-
-	

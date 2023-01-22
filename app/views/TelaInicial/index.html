@@ -35,10 +35,19 @@
 
 #divPesquisar{
   margin-left: auto;
-  m
+  
 
 }
 
+#linkA{
+ 
+ color: white;
+}
+
+#linkA:hover{
+  color: green;
+
+}
 </style>
 
 
@@ -48,7 +57,7 @@
 
  <div class="hero_area">
     <div class="bg-box">
-      <img src="@{'public/images/images/Offset Noticias.jpg'}" alt="">
+      <img src="@{'public/images/images/imagemHome.jpg'}" alt="">
     </div>
     <!-- header section strats -->
     <header class="header_section">
@@ -56,7 +65,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="@{TelaInicial.index}">
             <span>
-              Offset
+              Wind OffShore Contents
             </span>
           </a>
 
@@ -166,7 +175,7 @@
           <div class="box">
             <div>
               <div class="img-box">
-                <img src="@{'public/images/images/about-img.png'}" alt="">
+                <img src="../uploads/${p.id}/${p.nomeFoto}" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -189,9 +198,9 @@
                 
                 
                 <form class="form-inline">
-                <a href="#"><button class="btn  my-2 my-sm-0 nav_search-btn" type="submit" class="order_online" style="background-color: darkgoldenrod; border-radius: 20px;">
-                  linkagem da news
-                  </button></a>
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit" class="order_online" style="background-color: darkgoldenrod; border-radius: 20px;">
+                    <a href="${p.link}"  id="linkA" target="_blank"> Acesse a notícia</a>
+                      </button>
                 </form>
               </div>
             </div>
